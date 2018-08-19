@@ -13,7 +13,6 @@ import javax.transaction.Transactional;
 //import org.springframework.transaction.annotation.Transactional;
 
 @Service
-//@Transactional
 @Transactional
 public class InventoryService  implements IInventoryService
 {

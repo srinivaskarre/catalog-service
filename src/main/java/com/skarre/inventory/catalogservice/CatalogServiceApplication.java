@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,
 		JpaRepositoriesAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 @ComponentScan("com.skarre.*")
-class CatalogServiceApplication {
+public class CatalogServiceApplication {
 
 	private static final Logger logger= LoggerFactory.getLogger(CatalogServiceApplication.class);
 
