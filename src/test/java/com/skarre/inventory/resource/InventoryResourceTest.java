@@ -50,7 +50,7 @@ public class InventoryResourceTest {
     public void getAllInventory() throws Exception{
         Mockito.when(inventoryService.getAllInventory()).thenReturn(Collections.emptyList());
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/allInventory")).andExpect(MockMvcResultMatchers.status().isOk());
+                MockMvcRequestBuilders.get("/api/allInventory")).andExpect(MockMvcResultMatchers.status().isOk());
         Mockito.verify(inventoryService).getAllInventory();
     }
 
@@ -69,7 +69,7 @@ public class InventoryResourceTest {
         });
 
         mockMvc.perform(
-                MockMvcRequestBuilders.get("/getInventory/1")
+                MockMvcRequestBuilders.get("/api/getInventory/1")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
         ).andExpect(MockMvcResultMatchers.status().isOk())
         .andExpect(MockMvcResultMatchers.jsonPath("$.sku",Matchers.is("getInventory_sku")));
@@ -79,7 +79,7 @@ public class InventoryResourceTest {
     public void createSupply() throws Exception {
         Mockito.when(inventoryService.addSkuToStock(staticInventory)).thenReturn(staticInventory);
         mockMvc.perform(
-                MockMvcRequestBuilders.put("/saveInventory")
+                MockMvcRequestBuilders.put("/api/saveInventory")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(IRequestJsonString.invJson)
                 .accept(MediaType.APPLICATION_JSON_VALUE)

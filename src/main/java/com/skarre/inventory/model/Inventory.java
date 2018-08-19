@@ -1,11 +1,12 @@
 package com.skarre.inventory.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 
 @Entity
 @Table(name="INVENTORY")
-public class Inventory implements BaseEntity
+public class Inventory implements BaseEntity,Serializable
 {
 	/*
 	 * props

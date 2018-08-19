@@ -24,7 +24,7 @@ public class InventoryDataAccessor implements IInventoryDataAccessor
 
 	@Override
 	public Inventory getInventoryByInventoryId(Long inventoryId) {
-		return (Inventory) hibLayer.getEntity(Inventory.class,inventoryId);
+		return (Inventory) hibLayer.getEntity(IInventoryQuery.GET_INVENTORY_BY_ID,inventoryId);
 	}
 
 	@Override

@@ -13,6 +13,7 @@ import com.skarre.inventory.model.Inventory;
 import com.skarre.inventory.service.IInventoryService;
 
 @RestController
+@RequestMapping("/api")
 public class InventoryResource 
 {
 
